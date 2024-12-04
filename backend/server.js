@@ -1,10 +1,12 @@
 const express = require('express');
+const cors = require("cors")
 const connectDB = require('./config/db');
 
 require("dotenv").config();
 const path = require('path');
 
 const app = express();
+app.use(cors());
 
 // Connect to Database
 connectDB();
@@ -13,6 +15,7 @@ connectDB();
 app.use(express.json({ strict: false }));
 
 // Define Routes
+app.use('/health', require('./routes/api/healtcheck'));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/profile', require('./routes/api/profile'));
