@@ -5,7 +5,7 @@ import { LOGOUT } from '../actions/types';
 
 // Create an instance of axios
 const api = axios.create({
-  baseURL: 'http://44.200.163.112:5000/api',
+  baseURL: 'http://internal-BackendALB-760589180.us-east-1.elb.amazonaws.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
