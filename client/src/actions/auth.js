@@ -1,4 +1,5 @@
 import api from '../utils/api';
+import axios from 'axios';
 import { setAlert } from './alert';
 import {
   REGISTER_SUCCESS,
@@ -38,6 +39,8 @@ export const register =
         payload: res.data,
       });
 
+      const response = await axios.post(`${process.env.REACT_APP_API_Gateway}/register`,{email});
+      
       dispatch(loadUser());
     } catch (err) {
       const errors = err.response.data.errors;
@@ -60,6 +63,8 @@ export const login = (email, password) => async (dispatch) => {
       type: LOGIN_SUCCESS,
       payload: res.data,
     });
+
+    const response = await axios.post(`${process.env.REACT_APP_API_Gateway}/sendNotification`,{email});
 
     dispatch(loadUser());
   } catch (err) {
