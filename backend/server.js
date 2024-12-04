@@ -7,7 +7,14 @@ const path = require('path');
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: 'http://3.80.144.13:3000',  
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+  allowedHeaders: ['Content-Type', 'Authorization', 'x-auth-token'], 
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 // Connect to Database
 connectDB();
