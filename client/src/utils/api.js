@@ -11,6 +11,8 @@ const api = axios.create({
   },
 });
 
+console.log(`http://${process.env.REACT_APP_LoadBalancer_DNS}/api`);
+
 /*
   NOTE: intercept any error responses from the api
  and check if the token is no longer valid.

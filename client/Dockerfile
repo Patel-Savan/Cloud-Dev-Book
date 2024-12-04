@@ -13,6 +13,8 @@ RUN npm install
 # Copy the rest of your application code
 COPY . .
 
+COPY .env .env
+
 # Expose the port your app will run on (change if your app uses a different port)
 EXPOSE 3000
 
