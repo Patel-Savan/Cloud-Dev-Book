@@ -7,11 +7,7 @@ const path = require('path');
 
 const app = express();
 
-app.use(cors({
-  origin: '*', 
-  methods: ['GET', 'POST', 'PUT', 'DELETE','OPTIONS'], 
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(cors());
 
 // Connect to Database
 connectDB();
