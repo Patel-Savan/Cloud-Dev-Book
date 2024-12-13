@@ -8,7 +8,7 @@ const path = require('path');
 const app = express();
 
 const corsOptions = {
-  origin: 'http://3.80.144.13:3000',  
+  origin: '*',  
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
   allowedHeaders: ['Content-Type', 'Authorization', 'x-auth-token'], 
   credentials: true,
